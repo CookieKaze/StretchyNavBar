@@ -77,9 +77,9 @@
 		1DC5D6FE1DF9B52500375FA3 /* StretchyNavBar */ = {
 			isa = PBXGroup;
 			children = (
+				1DC5D7031DF9B52500375FA3 /* Main.storyboard */,
 				1DC5D6FF1DF9B52500375FA3 /* AppDelegate.swift */,
 				1DC5D7011DF9B52500375FA3 /* ViewController.swift */,
-				1DC5D7031DF9B52500375FA3 /* Main.storyboard */,
 				1DC5D7061DF9B52500375FA3 /* Assets.xcassets */,
 				1DC5D7081DF9B52500375FA3 /* LaunchScreen.storyboard */,
 				1DC5D70B1DF9B52500375FA3 /* Info.plist */,

@@ -9,17 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    //MARK: Properties
+    @IBOutlet weak var navBarHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var plusButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func plusButtonTapped(_ sender: UIButton) {
+        if navBarHeight.constant == 200 {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
+                self.navBarHeight.constant = 64
+                let transform = CGAffineTransform(rotationAngle: CGFloat(0))
+                self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
+                self.view.layoutIfNeeded()
+            }, completion: {(finished) -> Void in
+                // ....
+            })
+        }else {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
+                self.navBarHeight.constant = 200
+                let transform = CGAffineTransform(rotationAngle: CGFloat(95))
+                self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
+                self.view.layoutIfNeeded()
+            }, completion: {(finished) -> Void in
+                // ....
+            })
+            
+        }
     }
-
-
 }
 
