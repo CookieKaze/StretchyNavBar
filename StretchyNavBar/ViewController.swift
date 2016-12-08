@@ -8,36 +8,99 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: Properties
     @IBOutlet weak var navBarHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var navBarView: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var candyCaneButton: UIButton!
+    @IBOutlet weak var gingerBreadButton: UIButton!
+    @IBOutlet weak var santaButton: UIButton!
+    @IBOutlet weak var presentButton: UIButton!
+    
+    var items: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBarHeight.constant = 64
+        stackView.isHidden = true
     }
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         if navBarHeight.constant == 200 {
+            stackView.isHidden = true
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
                 self.navBarHeight.constant = 64
                 let transform = CGAffineTransform(rotationAngle: CGFloat(0))
                 self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
                 self.view.layoutIfNeeded()
             }, completion: {(finished) -> Void in
-                // ....
+                //self.foodStack.isHidden = true
             })
         }else {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
                 self.navBarHeight.constant = 200
                 let transform = CGAffineTransform(rotationAngle: CGFloat(95))
                 self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
+                self.stackView.isHidden = false
                 self.view.layoutIfNeeded()
             }, completion: {(finished) -> Void in
-                // ....
+                
             })
             
         }
     }
+    @IBAction func presentTapped(_ sender: UIButton) {
+        items.insert("Christmas Present", at: 0)
+        insertRowReload()
+    }
+    @IBAction func santaTapped(_ sender: UIButton) {
+        items.insert("Santa Claus", at: 0)
+        insertRowReload()
+    }
+    @IBAction func gingerbreadTapped(_ sender: UIButton) {
+        items.insert("Gingerbread Man", at: 0)
+        insertRowReload()
+    }
+    @IBAction func candycaneTapped(_ sender: UIButton) {
+        items.insert("Candy Cane", at: 0)
+        insertRowReload()
+    }
+    
+    //MARK: Table Data Source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func insertRowReload() {
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.middle)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.textColor = UIColor.white
+        
+        if items.count % 2 == 0
+        {
+            cell.backgroundColor = UIColor.init(red: 1.0, green: 0.5, blue: 0.5, alpha: 1)
+        } else {
+            cell.backgroundColor = UIColor.init(red: 1.0, green: 0.2, blue: 0.2, alpha: 1)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    
 }
 

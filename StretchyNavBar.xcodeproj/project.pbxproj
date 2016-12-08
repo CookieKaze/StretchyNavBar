@@ -10,9 +10,9 @@
 		1DC5D7001DF9B52500375FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5D6FF1DF9B52500375FA3 /* AppDelegate.swift */; };
 		1DC5D7021DF9B52500375FA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5D7011DF9B52500375FA3 /* ViewController.swift */; };
 		1DC5D7051DF9B52500375FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5D7031DF9B52500375FA3 /* Main.storyboard */; };
-		1DC5D7071DF9B52500375FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5D7061DF9B52500375FA3 /* Assets.xcassets */; };
 		1DC5D70A1DF9B52500375FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5D7081DF9B52500375FA3 /* LaunchScreen.storyboard */; };
 		1DC5D7151DF9B52500375FA3 /* StretchyNavBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC5D7141DF9B52500375FA3 /* StretchyNavBarTests.swift */; };
+		1DC5D7391DF9C24100375FA3 /* Stretchy-NavBar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DC5D7381DF9C24100375FA3 /* Stretchy-NavBar.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +30,12 @@
 		1DC5D6FF1DF9B52500375FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DC5D7011DF9B52500375FA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1DC5D7041DF9B52500375FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1DC5D7061DF9B52500375FA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DC5D7091DF9B52500375FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DC5D70B1DF9B52500375FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DC5D7101DF9B52500375FA3 /* StretchyNavBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StretchyNavBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC5D7141DF9B52500375FA3 /* StretchyNavBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyNavBarTests.swift; sourceTree = "<group>"; };
 		1DC5D7161DF9B52500375FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DC5D7381DF9C24100375FA3 /* Stretchy-NavBar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Stretchy-NavBar.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 				1DC5D7031DF9B52500375FA3 /* Main.storyboard */,
 				1DC5D6FF1DF9B52500375FA3 /* AppDelegate.swift */,
 				1DC5D7011DF9B52500375FA3 /* ViewController.swift */,
-				1DC5D7061DF9B52500375FA3 /* Assets.xcassets */,
+				1DC5D7381DF9C24100375FA3 /* Stretchy-NavBar.xcassets */,
 				1DC5D7081DF9B52500375FA3 /* LaunchScreen.storyboard */,
 				1DC5D70B1DF9B52500375FA3 /* Info.plist */,
 			);
@@ -182,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DC5D70A1DF9B52500375FA3 /* LaunchScreen.storyboard in Resources */,
-				1DC5D7071DF9B52500375FA3 /* Assets.xcassets in Resources */,
+				1DC5D7391DF9C24100375FA3 /* Stretchy-NavBar.xcassets in Resources */,
 				1DC5D7051DF9B52500375FA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

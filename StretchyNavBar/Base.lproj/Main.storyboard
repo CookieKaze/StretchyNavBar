@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,44 +23,120 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQD-rT-z8H">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daz-Ei-4Qp">
-                                        <rect key="frame" x="333" y="12" width="34" height="52"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daz-Ei-4Qp">
+                                        <rect key="frame" x="333" y="79" width="34" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="6y1-fk-520"/>
                                             <constraint firstAttribute="height" constant="52" id="cmf-5x-VgQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                        <state key="normal" title="＋"/>
+                                        <color key="tintColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hks-zt-VUB"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XV0-h0-ks8">
+                                        <rect key="frame" x="18" y="68" width="270" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nG2-fE-dKG">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="f6b-54-jbZ"/>
+                                                    <constraint firstAttribute="height" constant="64" id="nra-t2-SH5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="present"/>
+                                                <connections>
+                                                    <action selector="presentTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l1y-KT-73a"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-AW-kBf">
+                                                <rect key="frame" x="70" y="0.0" width="60" height="64"/>
+                                                <state key="normal" title="Button" image="santa"/>
+                                                <connections>
+                                                    <action selector="santaTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAX-de-ALm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMh-aG-Kva">
+                                                <rect key="frame" x="140" y="0.0" width="60" height="64"/>
+                                                <state key="normal" title="Button" image="gingerbread"/>
+                                                <connections>
+                                                    <action selector="gingerbreadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyU-y9-USA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1y-ba-PqI">
+                                                <rect key="frame" x="210" y="0.0" width="60" height="64"/>
+                                                <state key="normal" title="Button" image="candycane"/>
+                                                <connections>
+                                                    <action selector="candycaneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48u-Co-0KN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Daz-Ei-4Qp" firstAttribute="centerY" secondItem="qQD-rT-z8H" secondAttribute="centerY" constant="5" id="0Sc-iv-IYG"/>
                                     <constraint firstAttribute="trailing" secondItem="Daz-Ei-4Qp" secondAttribute="trailing" constant="8" id="Oyq-pF-0CV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Daz-Ei-4Qp" secondAttribute="bottom" id="Pfp-Cp-yQk"/>
-                                    <constraint firstAttribute="height" constant="64" id="Vxo-C7-F2f"/>
+                                    <constraint firstItem="XV0-h0-ks8" firstAttribute="centerY" secondItem="qQD-rT-z8H" secondAttribute="centerY" id="U6V-3z-IAc"/>
+                                    <constraint firstAttribute="height" constant="200" id="Vxo-C7-F2f"/>
+                                    <constraint firstItem="XV0-h0-ks8" firstAttribute="leading" secondItem="qQD-rT-z8H" secondAttribute="leadingMargin" constant="10" id="gU5-N5-7VG"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M8H-cv-nQy">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <color key="backgroundColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Vjh-vO-sOG">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vjh-vO-sOG" id="FG3-LJ-mKR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="43S-hD-HtS"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lB1-OW-Fmx"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="M8H-cv-nQy" firstAttribute="top" secondItem="qQD-rT-z8H" secondAttribute="bottom" id="1If-sq-gI6"/>
                             <constraint firstItem="qQD-rT-z8H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Hi-KS-vF5"/>
+                            <constraint firstAttribute="trailing" secondItem="M8H-cv-nQy" secondAttribute="trailing" id="9mj-F1-Mhg"/>
                             <constraint firstItem="qQD-rT-z8H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HSa-R7-Fyf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M8H-cv-nQy" secondAttribute="bottom" id="JMm-g4-T2G"/>
+                            <constraint firstItem="M8H-cv-nQy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j7G-5H-B7O"/>
                             <constraint firstAttribute="trailing" secondItem="qQD-rT-z8H" secondAttribute="trailing" id="vvk-av-SIL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="candyCaneButton" destination="x1y-ba-PqI" id="5CR-et-UCn"/>
+                        <outlet property="gingerBreadButton" destination="zMh-aG-Kva" id="gyC-V6-IHf"/>
                         <outlet property="navBarHeight" destination="Vxo-C7-F2f" id="ck4-DI-5Qd"/>
+                        <outlet property="navBarView" destination="qQD-rT-z8H" id="EQI-Ao-TkA"/>
                         <outlet property="plusButton" destination="Daz-Ei-4Qp" id="UJJ-VU-T2t"/>
+                        <outlet property="presentButton" destination="nG2-fE-dKG" id="Jph-4a-ZQR"/>
+                        <outlet property="santaButton" destination="Lfg-AW-kBf" id="0dA-d5-WDp"/>
+                        <outlet property="stackView" destination="XV0-h0-ks8" id="dCM-29-bzf"/>
+                        <outlet property="tableView" destination="M8H-cv-nQy" id="Gk6-gP-3uc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="194" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="candycane" width="64" height="64"/>
+        <image name="gingerbread" width="64" height="64"/>
+        <image name="present" width="64" height="64"/>
+        <image name="santa" width="64" height="64"/>
+    </resources>
 </document>
