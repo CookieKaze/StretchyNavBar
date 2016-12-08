@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,59 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stretchy Navigation Bar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-gx-y3P">
+                                <rect key="frame" x="79" y="256" width="217" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="2x9-6f-QYM"/>
+                                    <constraint firstAttribute="width" constant="217" id="nKb-Yh-ta3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="1" green="0.14117647059999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="santa" translatesAutoresizingMaskIntoConstraints="NO" id="PVy-w4-Y9G">
+                                <rect key="frame" x="157" y="181" width="61" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="InS-ZH-vbz"/>
+                                    <constraint firstAttribute="height" constant="57" id="U2R-6w-Sfr"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candycane" translatesAutoresizingMaskIntoConstraints="NO" id="amH-WZ-UfF">
+                                <rect key="frame" x="88" y="181" width="61" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="YY9-dl-n2O"/>
+                                    <constraint firstAttribute="height" constant="57" id="hnc-pu-Pn3"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candycane" translatesAutoresizingMaskIntoConstraints="NO" id="ld8-aZ-b60">
+                                <rect key="frame" x="226" y="181" width="61" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="Mvi-05-dRS"/>
+                                    <constraint firstAttribute="width" constant="61" id="Pj4-HZ-pl8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Htf-gx-y3P" firstAttribute="top" secondItem="amH-WZ-UfF" secondAttribute="bottom" constant="18" id="K3P-y4-gV9"/>
+                            <constraint firstItem="Htf-gx-y3P" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Qxu-oK-zQK"/>
+                            <constraint firstItem="PVy-w4-Y9G" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bIh-HG-Ibz"/>
+                            <constraint firstItem="Htf-gx-y3P" firstAttribute="top" secondItem="PVy-w4-Y9G" secondAttribute="bottom" constant="18" id="cJQ-Ol-lJV"/>
+                            <constraint firstItem="PVy-w4-Y9G" firstAttribute="leading" secondItem="amH-WZ-UfF" secondAttribute="trailing" constant="8" id="pJP-0f-Ndw"/>
+                            <constraint firstItem="Htf-gx-y3P" firstAttribute="top" secondItem="ld8-aZ-b60" secondAttribute="bottom" constant="18" id="qod-tk-CDt"/>
+                            <constraint firstItem="Htf-gx-y3P" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qpj-q2-WjZ"/>
+                            <constraint firstItem="ld8-aZ-b60" firstAttribute="leading" secondItem="PVy-w4-Y9G" secondAttribute="trailing" constant="8" id="utO-7l-qev"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="candycane" width="64" height="64"/>
+        <image name="santa" width="64" height="64"/>
+    </resources>
 </document>
