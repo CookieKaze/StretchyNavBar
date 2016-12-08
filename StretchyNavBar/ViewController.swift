@@ -8,6 +8,10 @@
 
 import UIKit
 
+var defaultNavHeight: CGFloat = 64
+var expandedNavHeight: CGFloat = 200
+
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: Properties
     @IBOutlet weak var navBarHeight: NSLayoutConstraint!
@@ -25,34 +29,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBarHeight.constant = 64
+        navBarHeight.constant = defaultNavHeight
         stackView.isHidden = true
     }
     
+    //Stretchy Navigation
     @IBAction func plusButtonTapped(_ sender: UIButton) {
-        if navBarHeight.constant == 200 {
+        if navBarHeight.constant == expandedNavHeight {
             stackView.isHidden = true
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
-                self.navBarHeight.constant = 64
+                self.navBarHeight.constant = defaultNavHeight
                 let transform = CGAffineTransform(rotationAngle: CGFloat(0))
                 self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
                 self.view.layoutIfNeeded()
-            }, completion: {(finished) -> Void in
-                //self.foodStack.isHidden = true
-            })
+            }, completion: {(finished) -> Void in })
         }else {
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 20, options: .curveEaseIn, animations: {
-                self.navBarHeight.constant = 200
+                self.navBarHeight.constant = expandedNavHeight
                 let transform = CGAffineTransform(rotationAngle: CGFloat(95))
                 self.plusButton.layer.transform = CATransform3DMakeAffineTransform(transform)
                 self.stackView.isHidden = false
                 self.view.layoutIfNeeded()
-            }, completion: {(finished) -> Void in
-                
-            })
-            
+            }, completion: {(finished) -> Void in })
         }
     }
+    
+    //Button Actions
     @IBAction func presentTapped(_ sender: UIButton) {
         items.insert("Christmas Present", at: 0)
         insertRowReload()
@@ -70,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         insertRowReload()
     }
     
-    //MARK: Table Data Source
+    //MARK: Table Data Source and Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -100,7 +102,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    
 }
 
